@@ -1,0 +1,1051 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Soares | Silva Advogados Associados</title>
+  <meta name="description" content="Advocacia estratégica para produtores rurais, empresas do agronegócio e investidores do setor." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-dark: #11100e;
+      --bg-soft: #191714;
+      --gold: #b9975b;
+      --gold-light: #d5bc82;
+      --green: #31452d;
+      --text: #f5f0e6;
+      --muted: #b9b0a0;
+      --white: #ffffff;
+      --line: rgba(185, 151, 91, 0.24);
+      --card: rgba(255, 255, 255, 0.045);
+      --shadow: 0 24px 60px rgba(0, 0, 0, 0.32);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg-dark);
+      color: var(--text);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .topbar {
+      background: #0b0a09;
+      border-bottom: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .topbar .container {
+      min-height: 38px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .socials {
+      display: flex;
+      gap: 14px;
+      align-items: center;
+    }
+
+    .socials a {
+      width: 26px;
+      height: 26px;
+      display: grid;
+      place-items: center;
+      border: 1px solid var(--line);
+      border-radius: 50%;
+      transition: 0.25s ease;
+      font-size: 11px;
+      font-weight: 700;
+    }
+
+    .socials a:hover {
+      background: var(--gold);
+      color: #111;
+    }
+
+    .container {
+      width: min(1180px, calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(16px);
+      background: rgba(17, 16, 14, 0.88);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .nav {
+      height: 86px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 32px;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      min-width: 210px;
+    }
+
+    .logo-mark {
+      width: 48px;
+      height: 48px;
+      border: 1px solid var(--gold);
+      display: grid;
+      place-items: center;
+      font-family: 'Cinzel', serif;
+      font-weight: 700;
+      color: var(--gold-light);
+      letter-spacing: -1px;
+      background: linear-gradient(145deg, rgba(185, 151, 91, 0.18), rgba(255, 255, 255, 0.02));
+      box-shadow: inset 0 0 18px rgba(185, 151, 91, 0.12);
+    }
+
+    .logo-text strong {
+      display: block;
+      font-family: 'Cinzel', serif;
+      font-size: 19px;
+      letter-spacing: 1px;
+      line-height: 1.1;
+    }
+
+    .logo-text span {
+      color: var(--muted);
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 1.7px;
+    }
+
+    .menu {
+      list-style: none;
+      display: flex;
+      gap: 30px;
+      align-items: center;
+      font-size: 14px;
+      text-transform: uppercase;
+      letter-spacing: 1.2px;
+      color: #ded7cb;
+    }
+
+    .menu a {
+      position: relative;
+      padding: 10px 0;
+    }
+
+    .menu a::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 0;
+      height: 1px;
+      background: var(--gold);
+      transition: 0.25s ease;
+    }
+
+    .menu a:hover::after {
+      width: 100%;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      padding: 0 24px;
+      border: 1px solid var(--gold);
+      color: #10100f;
+      background: var(--gold);
+      font-weight: 700;
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 1.2px;
+      transition: 0.25s ease;
+      cursor: pointer;
+    }
+
+    .btn:hover {
+      background: transparent;
+      color: var(--gold-light);
+    }
+
+    .btn.secondary {
+      background: transparent;
+      color: var(--gold-light);
+    }
+
+    .btn.secondary:hover {
+      background: var(--gold);
+      color: #10100f;
+    }
+
+    .mobile-btn {
+      display: none;
+      width: 44px;
+      height: 44px;
+      border: 1px solid var(--line);
+      background: transparent;
+      color: var(--text);
+      font-size: 24px;
+    }
+
+    .hero {
+      position: relative;
+      min-height: 720px;
+      display: grid;
+      align-items: center;
+      isolation: isolate;
+      overflow: hidden;
+      background:
+        linear-gradient(90deg, rgba(17, 16, 14, 0.95) 0%, rgba(17, 16, 14, 0.8) 46%, rgba(17, 16, 14, 0.35) 100%),
+        url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=1800&q=80') center/cover;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at 30% 50%, rgba(185, 151, 91, 0.17), transparent 34%),
+        radial-gradient(circle at 80% 20%, rgba(49, 69, 45, 0.34), transparent 30%);
+      z-index: -1;
+    }
+
+    .hero-content {
+      width: min(760px, 100%);
+      padding: 90px 0;
+    }
+
+    .eyebrow {
+      color: var(--gold-light);
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      font-weight: 700;
+      font-size: 12px;
+      margin-bottom: 20px;
+    }
+
+    h1, h2, h3 {
+      font-family: 'Cinzel', serif;
+      line-height: 1.12;
+      font-weight: 600;
+    }
+
+    h1 {
+      font-size: clamp(42px, 7vw, 78px);
+      margin-bottom: 24px;
+    }
+
+    .hero p {
+      color: #ded6c8;
+      font-size: 19px;
+      max-width: 650px;
+      margin-bottom: 34px;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .hero-metrics {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      margin-top: 70px;
+      border: 1px solid var(--line);
+      width: min(760px, 100%);
+      background: var(--line);
+    }
+
+    .metric {
+      background: rgba(17, 16, 14, 0.82);
+      padding: 24px;
+    }
+
+    .metric strong {
+      display: block;
+      color: var(--gold-light);
+      font-size: 26px;
+      font-family: 'Cinzel', serif;
+    }
+
+    .metric span {
+      display: block;
+      color: var(--muted);
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-top: 4px;
+    }
+
+    section {
+      padding: 100px 0;
+      position: relative;
+    }
+
+    .section-title {
+      display: grid;
+      gap: 10px;
+      margin-bottom: 44px;
+    }
+
+    .section-title .line {
+      width: 72px;
+      height: 1px;
+      background: var(--gold);
+    }
+
+    .section-title h2 {
+      font-size: clamp(32px, 5vw, 54px);
+      text-transform: uppercase;
+    }
+
+    .section-title p {
+      color: var(--muted);
+      max-width: 720px;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .about-photo {
+      min-height: 520px;
+      background:
+        linear-gradient(0deg, rgba(17,16,14,0.1), rgba(17,16,14,0.1)),
+        url('https://images.unsplash.com/photo-1516253593875-bd7ba052fbc5?auto=format&fit=crop&w=1200&q=80') center/cover;
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+      position: relative;
+    }
+
+    .about-photo::after {
+      content: 'Atuação no agronegócio';
+      position: absolute;
+      right: -24px;
+      bottom: 34px;
+      background: var(--gold);
+      color: #111;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      padding: 16px 22px;
+      font-size: 12px;
+    }
+
+    .about-text p {
+      color: #d5cdc0;
+      margin-bottom: 18px;
+      font-size: 16px;
+    }
+
+    .about-list {
+      margin-top: 30px;
+      display: grid;
+      gap: 14px;
+    }
+
+    .about-list li {
+      list-style: none;
+      color: #e9e1d3;
+      padding-left: 28px;
+      position: relative;
+    }
+
+    .about-list li::before {
+      content: '•';
+      position: absolute;
+      left: 0;
+      top: -2px;
+      color: var(--gold-light);
+      font-size: 24px;
+    }
+
+    .services {
+      background: var(--bg-soft);
+      border-block: 1px solid var(--line);
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+    }
+
+    .service-card {
+      min-height: 242px;
+      padding: 30px;
+      border: 1px solid var(--line);
+      background: var(--card);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: 0.28s ease;
+    }
+
+    .service-card:hover {
+      transform: translateY(-6px);
+      background: rgba(185, 151, 91, 0.09);
+      box-shadow: var(--shadow);
+    }
+
+    .service-number {
+      color: var(--gold-light);
+      font-size: 13px;
+      letter-spacing: 2px;
+      margin-bottom: 22px;
+    }
+
+    .service-card h3 {
+      font-size: 20px;
+      margin-bottom: 18px;
+    }
+
+    .service-card p {
+      color: var(--muted);
+      font-size: 14px;
+      margin-bottom: 24px;
+    }
+
+    .service-card a {
+      color: var(--gold-light);
+      text-transform: uppercase;
+      letter-spacing: 1.4px;
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .publications-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .post-card {
+      border: 1px solid var(--line);
+      background: var(--card);
+      overflow: hidden;
+      transition: 0.25s ease;
+    }
+
+    .post-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow);
+    }
+
+    .post-image {
+      height: 220px;
+      background-size: cover;
+      background-position: center;
+      filter: saturate(0.78);
+    }
+
+    .post-body {
+      padding: 26px;
+    }
+
+    .post-date {
+      color: var(--gold-light);
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 1.4px;
+      margin-bottom: 12px;
+    }
+
+    .post-body h3 {
+      font-size: 21px;
+      margin-bottom: 14px;
+    }
+
+    .post-body p {
+      color: var(--muted);
+      font-size: 14px;
+      margin-bottom: 20px;
+    }
+
+    .contact {
+      background:
+        linear-gradient(90deg, rgba(17,16,14,0.97), rgba(17,16,14,0.86)),
+        url('https://images.unsplash.com/photo-1499529112087-3cb3b73cec95?auto=format&fit=crop&w=1600&q=80') center/cover;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 56px;
+      align-items: start;
+    }
+
+    .contact-info {
+      border: 1px solid var(--line);
+      padding: 34px;
+      background: rgba(0, 0, 0, 0.24);
+    }
+
+    .info-item + .info-item {
+      border-top: 1px solid var(--line);
+      margin-top: 22px;
+      padding-top: 22px;
+    }
+
+    .info-item strong {
+      display: block;
+      color: var(--gold-light);
+      text-transform: uppercase;
+      font-size: 12px;
+      letter-spacing: 1.7px;
+      margin-bottom: 8px;
+    }
+
+    .info-item span,
+    .info-item a {
+      color: #e4dccf;
+    }
+
+    form {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .field {
+      display: grid;
+      gap: 7px;
+    }
+
+    .field.full {
+      grid-column: 1 / -1;
+    }
+
+    label {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    input,
+    textarea {
+      width: 100%;
+      border: 1px solid var(--line);
+      background: rgba(0, 0, 0, 0.34);
+      color: var(--white);
+      padding: 15px 16px;
+      font: inherit;
+      outline: none;
+      transition: 0.2s ease;
+    }
+
+    input:focus,
+    textarea:focus {
+      border-color: var(--gold);
+    }
+
+    textarea {
+      min-height: 150px;
+      resize: vertical;
+    }
+
+    footer {
+      background: #0b0a09;
+      border-top: 1px solid var(--line);
+      padding: 34px 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .footer-grid {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .whatsapp-float {
+      position: fixed;
+      right: 22px;
+      bottom: 22px;
+      width: 58px;
+      height: 58px;
+      background: #25d366;
+      color: #fff;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      font-weight: 800;
+      z-index: 80;
+      box-shadow: 0 14px 30px rgba(0,0,0,0.28);
+    }
+
+    .cookie {
+      position: fixed;
+      left: 22px;
+      bottom: 22px;
+      width: min(420px, calc(100% - 44px));
+      background: #0f0e0c;
+      border: 1px solid var(--line);
+      padding: 18px;
+      color: var(--muted);
+      z-index: 90;
+      box-shadow: var(--shadow);
+      display: none;
+    }
+
+    .cookie.show {
+      display: block;
+    }
+
+    .cookie p {
+      font-size: 13px;
+      margin-bottom: 14px;
+    }
+
+    .cookie button {
+      min-height: 38px;
+      padding: 0 16px;
+      border: 1px solid var(--gold);
+      background: var(--gold);
+      color: #111;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    @media (max-width: 1024px) {
+      .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .publications-grid,
+      .about-grid,
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .about-photo::after {
+        right: 20px;
+      }
+    }
+
+    @media (max-width: 820px) {
+      .topbar {
+        display: none;
+      }
+
+      .mobile-btn {
+        display: grid;
+        place-items: center;
+      }
+
+      .menu {
+        position: fixed;
+        top: 86px;
+        left: 0;
+        right: 0;
+        background: rgba(17, 16, 14, 0.98);
+        border-bottom: 1px solid var(--line);
+        display: none;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 28px 24px;
+        gap: 18px;
+      }
+
+      .menu.active {
+        display: flex;
+      }
+
+      .nav .btn {
+        display: none;
+      }
+
+      .hero {
+        min-height: 640px;
+      }
+
+      .hero-metrics {
+        grid-template-columns: 1fr;
+      }
+
+      form {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-grid {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .container {
+        width: min(100% - 28px, 1180px);
+      }
+
+      .services-grid,
+      .publications-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .logo-text strong {
+        font-size: 16px;
+      }
+
+      .hero-content {
+        padding: 70px 0;
+      }
+
+      section {
+        padding: 72px 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <div class="container">
+      <span>Advocacia estratégica para produtores rurais e negócios do agronegócio</span>
+      <div class="socials" aria-label="Redes sociais">
+        <a href="#" aria-label="Facebook">f</a>
+        <a href="#" aria-label="Instagram">i</a>
+        <a href="#" aria-label="LinkedIn">in</a>
+      </div>
+    </div>
+  </div>
+
+  <header>
+    <div class="container nav">
+      <a class="logo" href="#home" aria-label="Ir para o início">
+        <span class="logo-mark">SS</span>
+        <span class="logo-text">
+          <strong>SOARES | SILVA</strong>
+          <span>Advogados Associados</span>
+        </span>
+      </a>
+
+      <button class="mobile-btn" id="mobileBtn" aria-label="Abrir menu">☰</button>
+
+      <ul class="menu" id="menu">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#quem-somos">Quem somos</a></li>
+        <li><a href="#servicos">Serviços</a></li>
+        <li><a href="#publicacoes">Publicações</a></li>
+        <li><a href="#contato">Contato</a></li>
+      </ul>
+
+      <a class="btn" href="#contato">Fale conosco</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="container">
+        <div class="hero-content">
+          <div class="eyebrow">Direito do agronegócio</div>
+          <h1>Advocacia estratégica para o produtor rural.</h1>
+          <p>Soluções jurídicas para proteger patrimônio, reorganizar dívidas e dar segurança às decisões no agronegócio.</p>
+          <div class="hero-actions">
+            <a class="btn" href="#servicos">Conheça os serviços</a>
+            <a class="btn secondary" href="#quem-somos">Quem somos</a>
+          </div>
+
+          <div class="hero-metrics" aria-label="Diferenciais do escritório">
+            <div class="metric">
+              <strong>Agro</strong>
+              <span>Foco no campo</span>
+            </div>
+            <div class="metric">
+              <strong>Rural</strong>
+              <span>Crédito e dívidas</span>
+            </div>
+            <div class="metric">
+              <strong>Família</strong>
+              <span>Sucessão e patrimônio</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="quem-somos">
+      <div class="container about-grid">
+        <div class="about-photo" aria-label="Imagem de propriedade rural"></div>
+        <div class="about-text">
+          <div class="section-title">
+            <span class="line"></span>
+            <span class="eyebrow">Quem somos</span>
+            <h2>Atuação jurídica com visão de campo e negócio.</h2>
+          </div>
+          <p>A Soares | Silva Advogados Associados atua ao lado de produtores rurais, empresas do agro e investidores, oferecendo orientação técnica, objetiva e estratégica para decisões que envolvem crédito, terra, patrimônio e sucessão.</p>
+          <ul class="about-list">
+            <li>Gestão de endividamento rural.</li>
+            <li>Operações com imóveis e empresas do agro.</li>
+            <li>Planejamento patrimonial e sucessório.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="services" id="servicos">
+      <div class="container">
+        <div class="section-title">
+          <span class="line"></span>
+          <span class="eyebrow">Nossos serviços</span>
+          <h2>Áreas de atuação</h2>
+          <p>Atuação consultiva e contenciosa em demandas essenciais para o produtor rural e para o agronegócio.</p>
+        </div>
+
+        <div class="services-grid">
+          <article class="service-card">
+            <div>
+              <div class="service-number">01</div>
+              <h3>Direito empresarial e do agronegócio</h3>
+              <p>Suporte jurídico para contratos, operações e decisões estratégicas no agro.</p>
+            </div>
+            <a href="#contato">+ Saiba mais</a>
+          </article>
+
+          <article class="service-card">
+            <div>
+              <div class="service-number">02</div>
+              <h3>Recuperação de créditos de ativos relevantes</h3>
+              <p>Estratégias para recuperação, negociação e defesa de créditos relevantes.</p>
+            </div>
+            <a href="#contato">+ Saiba mais</a>
+          </article>
+
+          <article class="service-card">
+            <div>
+              <div class="service-number">03</div>
+              <h3>Conflitos Societários</h3>
+              <p>Atuação em disputas societárias, empresas familiares e estruturas rurais.</p>
+            </div>
+            <a href="#contato">+ Saiba mais</a>
+          </article>
+
+          <article class="service-card">
+            <div>
+              <div class="service-number">04</div>
+              <h3>Assessoria na compra ou venda de imóvel rural</h3>
+              <p>Segurança jurídica na negociação de fazendas e propriedades rurais.</p>
+            </div>
+            <a href="#contato">+ Saiba mais</a>
+          </article>
+
+          <article class="service-card">
+            <div>
+              <div class="service-number">05</div>
+              <h3>Precificação de créditos</h3>
+              <p>Análise jurídica para avaliação de créditos e operações estruturadas.</p>
+            </div>
+            <a href="#contato">+ Saiba mais</a>
+          </article>
+
+          <article class="service-card">
+            <div>
+              <div class="service-number">06</div>
+              <h3>Assessoria na gestão de endividamento rural</h3>
+              <p>Renegociação, reorganização e defesa patrimonial do produtor rural.</p>
+            </div>
+            <a href="#contato">+ Saiba mais</a>
+          </article>
+
+          <article class="service-card">
+            <div>
+              <div class="service-number">07</div>
+              <h3>Planejamento sucessório e gestão patrimonial</h3>
+              <p>Proteção do patrimônio e continuidade da atividade rural entre gerações.</p>
+            </div>
+            <a href="#contato">+ Saiba mais</a>
+          </article>
+
+          <article class="service-card">
+            <div>
+              <div class="service-number">08</div>
+              <h3>Assessoria na compra e venda de empresas</h3>
+              <p>Assessoria em aquisições, vendas e reorganizações empresariais.</p>
+            </div>
+            <a href="#contato">+ Saiba mais</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="publicacoes">
+      <div class="container">
+        <div class="section-title">
+          <span class="line"></span>
+          <span class="eyebrow">Publicações</span>
+          <h2>Conteúdos e análises</h2>
+          <p>Análises objetivas sobre crédito rural, patrimônio, sucessão e operações no agronegócio.</p>
+        </div>
+
+        <div class="publications-grid">
+          <article class="post-card">
+            <div class="post-image" style="background-image: url('https://images.unsplash.com/photo-1605000797499-95a51c5269ae?auto=format&fit=crop&w=900&q=80');"></div>
+            <div class="post-body">
+              <div class="post-date">15/05/2026</div>
+              <h3>Endividamento rural: quando renegociar e como proteger o patrimônio</h3>
+              <p>Caminhos jurídicos para reorganizar dívidas e reduzir riscos.</p>
+              <a href="#contato">Leia mais</a>
+            </div>
+          </article>
+
+          <article class="post-card">
+            <div class="post-image" style="background-image: url('https://images.unsplash.com/photo-1563514227147-6d2ff665a6a0?auto=format&fit=crop&w=900&q=80');"></div>
+            <div class="post-body">
+              <div class="post-date">08/05/2026</div>
+              <h3>Compra e venda de imóvel rural: pontos jurídicos de atenção</h3>
+              <p>Cuidados essenciais antes de negociar propriedades produtivas.</p>
+              <a href="#contato">Leia mais</a>
+            </div>
+          </article>
+
+          <article class="post-card">
+            <div class="post-image" style="background-image: url('https://images.unsplash.com/photo-1501004318641-b39e6451bec6?auto=format&fit=crop&w=900&q=80');"></div>
+            <div class="post-body">
+              <div class="post-date">30/04/2026</div>
+              <h3>Sucessão familiar no agro: continuidade, proteção e planejamento</h3>
+              <p>Proteção, continuidade e organização familiar no campo.</p>
+              <a href="#contato">Leia mais</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact" id="contato">
+      <div class="container contact-grid">
+        <div>
+          <div class="section-title">
+            <span class="line"></span>
+            <span class="eyebrow">Contato</span>
+            <h2>Fale conosco</h2>
+            <p>Entre em contato para uma análise inicial da sua demanda rural, empresarial ou patrimonial.</p>
+          </div>
+
+          <div class="contact-info">
+            <div class="info-item">
+              <strong>Localização</strong>
+              <span>Rua Exemplo, nº 123, Centro, Sua Cidade – UF</span>
+            </div>
+            <div class="info-item">
+              <strong>Telefone</strong>
+              <a href="tel:+5511999999999">(11) 99999-9999</a>
+            </div>
+            <div class="info-item">
+              <strong>E-mail</strong>
+              <a href="mailto:contato@seuescritorio.com.br">contato@seuescritorio.com.br</a>
+            </div>
+            <div class="info-item">
+              <strong>Horário</strong>
+              <span>Segunda a sexta, das 08h às 18h</span>
+            </div>
+          </div>
+        </div>
+
+        <form action="#" method="post">
+          <div class="field">
+            <label for="nome">Nome*</label>
+            <input id="nome" name="nome" type="text" placeholder="Seu nome" required />
+          </div>
+          <div class="field">
+            <label for="email">E-mail*</label>
+            <input id="email" name="email" type="email" placeholder="seuemail@email.com" required />
+          </div>
+          <div class="field full">
+            <label for="telefone">Telefone</label>
+            <input id="telefone" name="telefone" type="tel" placeholder="(00) 00000-0000" />
+          </div>
+          <div class="field full">
+            <label for="mensagem">Mensagem*</label>
+            <textarea id="mensagem" name="mensagem" placeholder="Descreva sua demanda: dívida rural, imóvel rural, sucessão, crédito, contrato ou empresa." required></textarea>
+          </div>
+          <div class="field full">
+            <button class="btn" type="submit">Enviar mensagem</button>
+          </div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-grid">
+      <p>2026 © Soares | Silva Advogados Associados - Todos os direitos reservados.</p>
+      <div class="socials" aria-label="Redes sociais no rodapé">
+        <a href="#" aria-label="Facebook">f</a>
+        <a href="#" aria-label="Instagram">i</a>
+        <a href="#" aria-label="LinkedIn">in</a>
+      </div>
+    </div>
+  </footer>
+
+  <a class="whatsapp-float" href="https://wa.me/5511999999999" target="_blank" rel="noopener" aria-label="Chamar no WhatsApp">W</a>
+
+  <div class="cookie" id="cookieBox">
+    <p>Utilizamos cookies para melhorar sua experiência de navegação. Ao continuar, você concorda com nossa política de privacidade.</p>
+    <button id="acceptCookie">Aceitar e fechar</button>
+  </div>
+
+  <script>
+    const mobileBtn = document.getElementById('mobileBtn');
+    const menu = document.getElementById('menu');
+    const cookieBox = document.getElementById('cookieBox');
+    const acceptCookie = document.getElementById('acceptCookie');
+
+    mobileBtn.addEventListener('click', () => {
+      menu.classList.toggle('active');
+      mobileBtn.textContent = menu.classList.contains('active') ? '×' : '☰';
+    });
+
+    document.querySelectorAll('.menu a').forEach(link => {
+      link.addEventListener('click', () => {
+        menu.classList.remove('active');
+        mobileBtn.textContent = '☰';
+      });
+    });
+
+    if (!localStorage.getItem('cookiesAceitos')) {
+      setTimeout(() => cookieBox.classList.add('show'), 700);
+    }
+
+    acceptCookie.addEventListener('click', () => {
+      localStorage.setItem('cookiesAceitos', 'true');
+      cookieBox.classList.remove('show');
+    });
+  </script>
+</body>
+</html>
